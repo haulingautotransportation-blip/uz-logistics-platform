@@ -46,7 +46,45 @@
       .features,.steps{grid-template-columns:1fr}
       h1{font-size:36px}
     }
-  </style>
+      /* === RoYo Gas v2 (vision + directory + map) === */
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .sub{margin-top:6px}
+    .muted{color:var(--muted)}
+    .mini{margin-top:14px;display:grid;gap:10px}
+    .mini-row{display:flex;gap:10px;align-items:flex-start}
+    .dot{width:10px;height:10px;border-radius:99px;background:var(--primary);margin-top:6px;flex:0 0 auto}
+    .dot.green{background:var(--accent)}
+    .list{margin:10px 0 0;padding-left:18px;color:var(--muted);line-height:1.7}
+    .pitch{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .toolbar{display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+    .seg{display:flex;gap:8px;flex-wrap:wrap}
+    .seg-btn{padding:10px 12px;border-radius:999px;border:1px solid var(--border);background:#fff;cursor:pointer}
+    .seg-btn[aria-disabled="true"]{opacity:.5;cursor:not-allowed}
+    .seg-btn.active{background:rgba(37,99,235,.1);border-color:rgba(37,99,235,.35)}
+    .filters{display:flex;gap:10px;flex-wrap:wrap}
+    .label{display:grid;gap:6px;font-size:12px;color:var(--muted)}
+    .select{padding:10px 12px;border-radius:12px;border:1px solid var(--border);background:#fff;min-width:160px}
+    .stations{margin-top:14px;display:grid;gap:10px}
+    details.station{border:1px solid var(--border);background:#fff;border-radius:16px;overflow:hidden}
+    details.station[open]{box-shadow:0 8px 22px rgba(15,23,42,.06)}
+    summary.station-sum{list-style:none;cursor:pointer;padding:14px 14px;display:flex;align-items:center;gap:10px}
+    summary.station-sum::-webkit-details-marker{display:none}
+    .pill{padding:6px 10px;border-radius:999px;border:1px solid var(--border);font-size:12px;color:var(--muted)}
+    .pill.open{border-color:rgba(34,197,94,.35);background:rgba(34,197,94,.08);color:#166534}
+    .pill.busy{border-color:rgba(245,158,11,.35);background:rgba(245,158,11,.10);color:#92400e}
+    .pill.closed{border-color:rgba(239,68,68,.35);background:rgba(239,68,68,.08);color:#991b1b}
+    .station-body{padding:0 14px 14px;color:var(--muted);display:grid;gap:8px}
+    .kv{display:grid;grid-template-columns:140px 1fr;gap:10px;align-items:start}
+    .note{margin-top:12px;color:var(--muted);font-size:13px}
+    .mapbox{border-radius:16px;overflow:hidden;border:1px solid var(--border)}
+    .mapbox iframe{width:100%;height:260px;border:0}
+    @media (max-width:900px){
+      .two{grid-template-columns:1fr}
+      .pitch{grid-template-columns:1fr}
+      .select{min-width:140px}
+    }
+
+</style>
 </head>
 <body>
   <header>
@@ -165,5 +203,83 @@
       <p>© 2025 RoYo Gas. Barcha huquqlar himoyalangan.</p>
     </div>
   </footer>
+  <script>
+    // --- Demo station data (replace with real data later) ---
+    const STATIONS = [
+      { id: "cng-ur-01", fuel: "cng", city: "Urgench", name: "Urganch CNG #1", address: "Urganch sh., markaz", status: "open", wait: "10–15 min", hours: "24/7", note: "Demo ma’lumot" },
+      { id: "cng-ur-02", fuel: "cng", city: "Urgench", name: "Urganch CNG #2", address: "Aeroport yo‘li", status: "busy", wait: "25–35 min", hours: "06:00–23:00", note: "Demo ma’lumot" },
+      { id: "cng-kh-01", fuel: "cng", city: "Khiva",   name: "Xiva CNG",       address: "Xiva sh., yo‘l bo‘yi", status: "closed", wait: "—", hours: "—", note: "Demo ma’lumot" }
+    ];
+
+    const stationsWrap = document.getElementById("stationsWrap");
+    const cityFilter = document.getElementById("cityFilter");
+    const statusFilter = document.getElementById("statusFilter");
+
+    function pillClass(st){
+      if(st === "open") return "open";
+      if(st === "busy") return "busy";
+      return "closed";
+    }
+
+    function statusLabel(st){
+      if(st === "open") return "Ochiq";
+      if(st === "busy") return "Band";
+      return "Yopiq";
+    }
+
+    function renderStations(){
+      if(!stationsWrap) return;
+      const city = cityFilter ? cityFilter.value : "all";
+      const st = statusFilter ? statusFilter.value : "all";
+
+      const list = STATIONS
+        .filter(x => x.fuel === "cng")
+        .filter(x => city === "all" ? true : x.city === city)
+        .filter(x => st === "all" ? true : x.status === st);
+
+      if(list.length === 0){
+        stationsWrap.innerHTML = `<div class="note">Filtr bo‘yicha natija topilmadi.</div>`;
+        return;
+      }
+
+      stationsWrap.innerHTML = list.map(s => {
+        return `
+          <details class="station" id="${s.id}">
+            <summary class="station-sum">
+              <strong style="flex:1">${s.name}</strong>
+              <span class="pill ${pillClass(s.status)}">${statusLabel(s.status)}</span>
+              <span class="pill">${s.city}</span>
+            </summary>
+            <div class="station-body">
+              <div class="kv"><div><strong>Manzil</strong></div><div>${s.address}</div></div>
+              <div class="kv"><div><strong>Ish vaqti</strong></div><div>${s.hours}</div></div>
+              <div class="kv"><div><strong>Kutish</strong></div><div>${s.wait}</div></div>
+              <div class="kv"><div><strong>Izoh</strong></div><div>${s.note}</div></div>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+                <button class="btn" type="button" onclick="alert('Demo: bron ilovada ishlaydi')">Bron qilish (demo)</button>
+                <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(s.name + ' ' + s.city + ' Uzbekistan')}">Xaritada ochish</a>
+              </div>
+            </div>
+          </details>
+        `;
+      }).join("");
+    }
+
+    // Segmented control (fuel)
+    document.querySelectorAll('.seg-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if(btn.getAttribute('aria-disabled') === 'true') return;
+        document.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        // For now only CNG exists
+        renderStations();
+      });
+    });
+
+    if(cityFilter) cityFilter.addEventListener('change', renderStations);
+    if(statusFilter) statusFilter.addEventListener('change', renderStations);
+
+    renderStations();
+  </script>
 </body>
 </html>

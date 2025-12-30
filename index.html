@@ -41,6 +41,10 @@
     .feature{padding:16px;border-radius:16px;border:1px solid var(--border);background:#fff}
     .cta{display:flex;align-items:center;justify-content:space-between;gap:16px}
     footer{border-top:1px solid var(--border);padding:24px 0;color:var(--muted)}
+        .reserve-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .reserve-col{padding:14px;border:1px solid var(--border);border-radius:16px;background:#fff}
+    .olist{margin:10px 0 0;padding-left:18px;color:var(--muted);line-height:1.7}
+
     @media (max-width:900px){
       .grid{grid-template-columns:1fr}
       .features,.steps{grid-template-columns:1fr}
@@ -189,6 +193,60 @@
             <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;">
               <a href="#directory" class="btn primary">Pilot shoxobchalar ro‘yxati</a>
               <a href="#map" class="btn">Xarita</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESERVATION (HOW IT WORKS) -->
+    <section id="reserve">
+      <div class="container">
+        <h2>Bron qanday ishlaydi (namuna oqim)</h2>
+        <p class="sub">Investorlar uchun: bu bo‘lim bron mexanikasini 30 soniyada tushuntiradi. Real ilovada bu oqim yanada soddaroq bo‘ladi.</p>
+
+        <div class="card" style="margin-top:12px;">
+          <div class="reserve-grid">
+            <div class="reserve-col">
+              <h3>Haydovchi (ilovada)</h3>
+              <ol class="olist">
+                <li><strong>Shoxobcha tanlaydi</strong> — xaritada “Metan (CNG)” filtri bilan.</li>
+                <li><strong>Vaqt slotini tanlaydi</strong> — 10–15 daqiqalik oynalar.</li>
+                <li><strong>Bronni tasdiqlaydi</strong> — (keyin: to‘lov/garov).</li>
+                <li><strong>Vaqtida keladi</strong> — QR/kod bilan tez tekshirish.</li>
+                <li><strong>Yoqadi</strong> — navbat oqimi tartibli bo‘ladi.</li>
+              </ol>
+            </div>
+
+            <div class="reserve-col">
+              <h3>Shoxobcha (operator paneli)</h3>
+              <ol class="olist">
+                <li><strong>Bronlar ro‘yxatini ko‘radi</strong> — vaqt bo‘yicha.</li>
+                <li><strong>Bandlik indikatorini yangilaydi</strong> — open/busy/closed.</li>
+                <li><strong>Slot sig‘imini belgilaydi</strong> — masalan, har 10 daqiqada 6 ta mashina.</li>
+                <li><strong>Tekshiradi</strong> — QR/kod orqali kelgan bronlar.</li>
+                <li><strong>Analitika</strong> — pik soatlar, xizmat tezligi.</li>
+              </ol>
+            </div>
+
+            <div class="reserve-col">
+              <h3>Tizim (platforma logikasi)</h3>
+              <ol class="olist">
+                <li><strong>Slotlar yaratadi</strong> — shoxobcha sig‘imidan kelib chiqib.</li>
+                <li><strong>Navbatni tekislaydi</strong> — pik paytda limit, past paytda rag‘bat.</li>
+                <li><strong>Qoidalar</strong> — kechikish, bekor qilish, “no-show”.</li>
+                <li><strong>Himoya</strong> — spam bronlarni bloklash (telefon/ID).</li>
+                <li><strong>Hisobot</strong> — shahar, shoxobcha, kun kesimida.</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:14px; background:#f1f5f9;">
+            <h3 style="margin:0 0 8px;">Bron qoidalari (qisqa)</h3>
+            <div class="features" style="margin-top:10px;">
+              <div class="feature"><h3>Bekor qilish</h3><p>Slotdan oldin bekor qilsa jarima yo‘q (pilotda).</p></div>
+              <div class="feature"><h3>Kechikish</h3><p>5–10 daqiqadan keyin bron bekor bo‘lishi mumkin.</p></div>
+              <div class="feature"><h3>No-show</h3><p>Ko‘p takrorlansa vaqtincha blok.</p></div>
             </div>
           </div>
         </div>

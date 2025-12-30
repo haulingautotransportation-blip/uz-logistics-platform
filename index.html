@@ -100,84 +100,181 @@
   </header>
 
   <main>
-    <!-- HERO -->
-    <section class="hero">
+    <!-- HERO (Investor/System) -->
+    <section class="hero" id="platforma">
       <div class="container grid">
         <div>
-          <h1>Metan navbatisiz. <br/>Oldindan bron qiling.</h1>
-          <p>RoYo Gas — CNG (metan) shoxobchalarida navbatni oldindan band qilish, real vaqt holatini ko‘rish va to‘lovni soddalashtirish uchun mo‘ljallangan mobil ilova.</p>
+          <h1>RoYo Gas —<br/>CNG navbatlarini boshqarish platformasi</h1>
+          <p><strong>Bu faqat ilova emas.</strong> RoYo Gas — metan (CNG) shoxobchalari oqimini raqamlashtiradigan tizim: real vaqt holati + navbatni bron qilish + operator boshqaruvi. Maqsad — haydovchiga aniq tanlov berish, shoxobchaga tartib, bozorda esa barqaror oqim.</p>
+
           <div class="badges">
-            <span class="badge">CNG / Metan</span>
-            <span class="badge">Navbat bron qilish</span>
-            <span class="badge">Real vaqt holati</span>
-            <span class="badge">Xaritada yaqin shoxobcha</span>
+            <span class="badge">Pilot: Urganch</span>
+            <span class="badge">Shoxobcha katalogi</span>
+            <span class="badge">Bron tizimi</span>
+            <span class="badge">Operator paneli</span>
           </div>
+
           <div style="display:flex;gap:12px;flex-wrap:wrap">
-            <a id="download" class="btn primary">Tez kunda — App Store & Google Play</a>
-            <a href="#how" class="btn">Qanday ishlaydi?</a>
+            <a href="#flow" class="btn primary">Tizim qanday ishlaydi?</a>
+            <a href="#pilot" class="btn">Pilot isboti</a>
+            <a href="#roadmap" class="btn">Roadmap</a>
           </div>
         </div>
+
         <div class="card">
-          <h3>Asosiy muammo</h3>
-          <p>Metan shoxobchalarida uzoq navbatlar va noaniq ochiq/yopiq holat haydovchilar vaqtini yo‘qotadi.</p>
-          <h3>Bizning yechim</h3>
-          <p>Navbatni oldindan bron qilish + real vaqt ma’lumotlari = kamroq kutish, ko‘proq harakat.</p>
+          <h3>1 gapda g‘oya</h3>
+          <p><strong>“RoYo Gas — metan shoxobchalarida navbatni bron qilish va oqimni boshqarish tizimi.”</strong></p>
+
+          <h3 style="margin-top:14px;">Nega investorlar uchun muhim?</h3>
+          <p>Bu platforma shaharlar bo‘yicha kengayadi, shoxobchalar uchun B2B xizmat beradi, va real vaqt ma’lumotlar bilan kuchli analitika yaratadi.</p>
+
+          <div class="mini">
+            <div class="mini-row"><span class="dot"></span><div><strong>Haydovchi</strong><br/><span class="muted">Topadi → Bron qiladi → Vaqtida keladi</span></div></div>
+            <div class="mini-row"><span class="dot green"></span><div><strong>Shoxobcha</strong><br/><span class="muted">Oqimni boshqaradi → Holatni yangilaydi</span></div></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- HOW IT WORKS -->
-    <section id="how">
+    <!-- BIG PICTURE FLOW -->
+    <section id="flow">
       <div class="container">
-        <h2>Qanday ishlaydi?</h2>
+        <h2>Tizim qanday ishlaydi (katta rasm)</h2>
+        <p class="sub">Investorlar uchun: bu yerda “haydovchi nimani bosadi?” emas, “tizim qanday qiymat yaratadi?” ko‘rsatiladi.</p>
+
+        <div class="two" style="margin-top:14px;">
+          <div class="card">
+            <h3>Shoxobcha → Platforma</h3>
+            <ul class="list">
+              <li>Holat: ochiq/yopiq, bandlik (oddiy indikator).</li>
+              <li>Xizmat tezligi (taxminiy): oqimni yaxshilash uchun.</li>
+              <li>Bronlar ro‘yxati: rejalashtirilgan kelishlar.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Platforma → Haydovchi</h3>
+            <ul class="list">
+              <li>Xaritada yaqin shoxobcha + holat.</li>
+              <li>Vaqt bo‘yicha bron (navbatni kamaytirish).</li>
+              <li>Xabarnoma: “vaqt yaqin”, “shoxobcha band”.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px;">
+          <h3>Natija</h3>
+          <div class="features" style="margin-top:10px;">
+            <div class="feature"><h3>Haydovchi</h3><p>Kamroq kutish, aniq reja, yoqilg‘i tejaladi.</p></div>
+            <div class="feature"><h3>Shoxobcha</h3><p>Oqim tartibli, konflikt kamayadi, throughput oshadi.</p></div>
+            <div class="feature"><h3>Bozor</h3><p>Pik vaqtlar yumshaydi, tizim barqarorlashadi.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PILOT PROOF -->
+    <section id="pilot">
+      <div class="container">
+        <h2>Pilot isboti</h2>
+        <div class="two" style="margin-top:14px;">
+          <div class="card">
+            <h3>Boshlanish hududi</h3>
+            <p>Urganch (Xorazm). Maqsad: 5–10 shoxobchada pilot, keyin shaharlar bo‘yicha kengayish.</p>
+            <h3 style="margin-top:14px;">Nega aynan pilot?</h3>
+            <p>Pilot bilan: ma’lumot yig‘iladi, navbat modeli tekshiriladi, shoxobcha hamkorligi yo‘lga qo‘yiladi.</p>
+          </div>
+          <div class="card">
+            <h3>Raqamli vitrina</h3>
+            <p>Bu web — investorlarga “bizda domen + tizim konsepti + pilot katalog” borligini ko‘rsatadi. Asosiy mahsulot — mobil ilova va operator paneli.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;">
+              <a href="#directory" class="btn primary">Pilot shoxobchalar ro‘yxati</a>
+              <a href="#map" class="btn">Xarita</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATION DIRECTORY -->
+    <section id="directory">
+      <div class="container">
+        <h2>Metan shoxobchalar (pilot ro‘yxat)</h2>
+        <p class="sub">Hozir webda: katalog + filtr + dropdown. Keyingi bosqich: real vaqt holati va bron ishlashi.</p>
+
+        <div class="card" style="margin-top:12px;">
+          <div class="toolbar">
+            <div class="seg" role="tablist" aria-label="Yo‘qilg‘i turi">
+              <button class="seg-btn active" type="button" data-fuel="cng">Metan (CNG)</button>
+              <button class="seg-btn" type="button" data-fuel="soon" aria-disabled="true" title="Keyin">Benzin (keyin)</button>
+            </div>
+            <div class="filters">
+              <label class="label">Hudud
+                <select id="cityFilter" class="select">
+                  <option value="all">Barchasi</option>
+                  <option value="Urganch">Urganch</option>
+                </select>
+              </label>
+              <label class="label">Holat
+                <select id="statusFilter" class="select">
+                  <option value="all">Barchasi</option>
+                  <option value="open">Ochiq</option>
+                  <option value="busy">Band</option>
+                  <option value="closed">Yopiq</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div id="stationsWrap" class="stations"></div>
+
+          <div class="note">Eslatma: Holat/kutish/ish vaqti — keyin real vaqt ma’lumotlar bilan to‘ldiriladi.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAP (Light) -->
+    <section id="map">
+      <div class="container">
+        <h2>Xarita (yengil ko‘rinish)</h2>
+        <p class="sub">Sayt og‘irlashmasligi uchun kichik embed. Ilovada to‘liq xarita bo‘ladi.</p>
+        <div class="card">
+          <div class="mapbox">
+            <iframe
+              title="RoYo Gas map"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Urgench,%20Uzbekistan&output=embed"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section id="roadmap">
+      <div class="container">
+        <h2>Roadmap</h2>
         <div class="steps">
           <div class="step">
-            <h3>1. Toping</h3>
-            <p>Xaritada yaqin CNG shoxobchani va uning hozirgi holatini ko‘ring.</p>
+            <h3>0–1 oy</h3>
+            <p>Pilot: katalog + oddiy bron oqimi (Urganch).</p>
           </div>
           <div class="step">
-            <h3>2. Bron qiling</h3>
-            <p>Qulay vaqtni tanlab, navbatni oldindan band qiling.</p>
+            <h3>2–3 oy</h3>
+            <p>Operator paneli, holat yangilash, xabarnomalar.</p>
           </div>
           <div class="step">
-            <h3>3. Borib yoqing</h3>
-            <p>Belgilang vaqtda kelib, navbatsiz xizmat oling.</p>
+            <h3>4–6 oy</h3>
+            <p>To‘lov, analitika, shaharlar bo‘yicha kengayish.</p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- FEATURES -->
-    <section>
-      <div class="container">
-        <h2>Asosiy imkoniyatlar</h2>
-        <div class="features">
-          <div class="feature">
-            <h3>Real vaqt holati</h3>
-            <p>Ochiq/yopiq, bandlik darajasi va taxminiy kutish vaqti.</p>
+        <div class="card" style="margin-top:16px;">
+          <h3>Biznes modeli</h3>
+          <div class="features" style="margin-top:10px;">
+            <div class="feature"><h3>B2B obuna</h3><p>Shoxobcha paneli + analitika (oylik).</p></div>
+            <div class="feature"><h3>Komissiya</h3><p>Bron/to‘lovdan kichik komissiya (keyingi bosqich).</p></div>
+            <div class="feature"><h3>Reklama</h3><p>Servislar va yo‘l bo‘yi xizmatlari.</p></div>
           </div>
-          <div class="feature">
-            <h3>Bron va bekor qilish</h3>
-            <p>Bir necha bosishda bron qiling yoki reja o‘zgarsa bekor qiling.</p>
-          </div>
-          <div class="feature">
-            <h3>Xavfsiz to‘lov</h3>
-            <p>Ilova ichida qulay va xavfsiz to‘lov (keyingi bosqich).</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CITY / LAUNCH -->
-    <section>
-      <div class="container grid">
-        <div class="card">
-          <h3>Boshlanish hududi</h3>
-          <p>Urgench, Xorazm viloyati. Keyinchalik boshqa shaharlar qo‘shiladi.</p>
-        </div>
-        <div class="card">
-          <h3>Nega hozir?</h3>
-          <p>CNG talabi yuqori, navbatlar muammo. Raqamli bronlash — vaqtni tejaydi.</p>
         </div>
       </div>
     </section>
@@ -187,8 +284,8 @@
       <div class="container">
         <div class="card cta">
           <div>
-            <h2>RoYo Gas bilan vaqtingizni tejang</h2>
-            <p>Ilova ishga tushishi bilan birinchi bo‘lib xabardor bo‘ling.</p>
+            <h2>Web — vitrina. Ilova — asosiy mahsulot.</h2>
+            <p>Investitsiya bilan mobil ilova + operator paneli tez ishlab chiqiladi va pilot kengaytiriladi.</p>
           </div>
           <a class="btn primary" href="#contact">Bog‘lanish</a>
         </div>
